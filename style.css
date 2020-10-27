@@ -1,0 +1,53 @@
+
+#main-wrapper, #question-section, #result-section, #answer-alert, #scores-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+h2 {
+    font-weight: bolder;
+}
+
+#view-highscores {
+    display: flex;
+    justify-content: flex-start;
+    float: left;
+    margin: 20px;
+    color: rebeccapurple;
+    font-weight: bolder;
+    border: none;
+    border-radius: 10px;
+}
+
+
+#timer {
+    display: flex;
+    justify-content: flex-end;
+    float: right;
+    font-size: 20px;
+    margin: 20px;
+}
+
+#home-section {
+    text-align: center;
+}
+
+
+#start-button, .answer-button1, 
+.answer-button2, .answer-button3, 
+.answer-button4,  #submit-button, 
+#back-button, #clear-button{
+    color: white;
+    background-color: rebeccapurple;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+
+#highscores-list li {
+    background-color: #a67dc8;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+}
