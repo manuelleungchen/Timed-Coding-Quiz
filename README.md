@@ -1,9 +1,23 @@
 # Timed Coding Quiz
 Timed Coding Quiz to practice JavaScript knowledge
 
+![Languages](https://img.shields.io/github/languages/top/manuelleungchen/Timed-Coding-Quiz) ![Code Size](https://img.shields.io/github/languages/code-size/manuelleungchen/Timed-Coding-Quiz) ![Repo Size](https://img.shields.io/github/repo-size/manuelleungchen/Timed-Coding-Quiz) ![License](https://img.shields.io/github/license/manuelleungchen/Timed-Coding-Quiz)
+
+# Password Generator
+
+## Description
+This repository **\([Timed Coding Quiz](https://github.com/manuelleungchen/Timed-Coding-Quiz)\)** contains a Web Application that generates a time base quiz with Java Script questions. The languages use on this website are **HTML 5**, **CSS**, **Bootstrap** and **JavaScript**. This source code is available to everyone under the standard [MIT license](https://github.com/manuelleungchen/Timed-Coding-Quiz/blob/main/LICENSE).
+
+## Features
+* Each student have 100 seconds to finish the quiz
+* The time left represents the score
+* Incorrect answer reduce the time by 10 seconds
+* Student can save score with his initials
+* Highscores are storage on local storage 
+
+![Password Generator Web Application](./timed-coding-quiz.png)
 
 ## Acceptance Criteria
-
 ```
 GIVEN I am taking a code quiz
 WHEN I click the start button
@@ -18,15 +32,21 @@ WHEN the game is over
 THEN I can save my initials and score
 ```
 
-Pseudo Code
+## Instructions
+1. Go to [Coding Quiz Website](https://manuelleungchen.github.io/Timed-Coding-Quiz/)
+2. Click on Start Quiz button
+3. Answer as fast and accurally as you can
+4. Enter initials 
+5. Submit score
+6. Check Highscores
 
-Storange Questions on Array of objects(questions) with properties of question, answers(object) and correctAnswer.
-Create a timer variable to keep track of the time left (Score).
-Show a welcome menu and instructions and start button.
-When Start button is pressed, 
-Create a interval that goes from 100 to 0. 
-Show the first question. 
-If answers selected is incorrect, reduce timer by 10 seconds.
-Show the next question on the array.
-Stop interval when reached 0 or all question are answer.
-Ask user for Initials and save score on local storange
+## Credits
+All changes and improvements were implemented by:
+
+Manuel Leung Chen [GitHub](https://github.com/manuelleungchen)
+
+## License
+Copyright \(c\) Microsoft Corporation. All rights reserved.
+
+Licensed under the [MIT license](https://github.com/manuelleungchen/Timed-Coding-Quiz/blob/main/LICENSE).
+
