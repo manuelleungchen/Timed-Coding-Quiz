@@ -30,36 +30,56 @@ var scoresList = document.querySelector("#highscores-list");
 // Array of Objects (Questions)
 var myQuestions = [
     {
-      question: "Who invented JavaScript?",
-      answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich",
-        d: "Manuel Leung"
-      },
-      correctAnswer: "c"
+        question: "Who invented JavaScript?",
+        answers: {
+            a: "Douglas Crockford",
+            b: "Sheryl Sandberg",
+            c: "Brendan Eich",
+            d: "Manuel Leung"
+        },
+        correctAnswer: "c"
     },
     {
-      question: "Which one of these is a JavaScript package manager?",
-      answers: {
-        a: "Node.js",
-        b: "TypeScript",
-        c: "npm",
-        d: "JQuery"
-      },
-      correctAnswer: "c"
+        question: "Which one of these is a JavaScript package manager?",
+        answers: {
+            a: "Node.js",
+            b: "TypeScript",
+            c: "npm",
+            d: "JQuery"
+        },
+        correctAnswer: "c"
     },
     {
-      question: "Which tool can you use to ensure code quality?",
-      answers: {
-        a: "Angular",
-        b: "jQuery",
-        c: "RequireJS",
-        d: "ESLint"
-      },
-      correctAnswer: "d"
+        question: "Which tool can you use to ensure code quality?",
+        answers: {
+            a: "Angular",
+            b: "jQuery",
+            c: "RequireJS",
+            d: "ESLint"
+        },
+        correctAnswer: "d"
+    },
+    {
+        question: "Inside which HTML element do we put the JavaScript?",
+        answers: {
+            a: "script",
+            b: "javascript",
+            c: "scripting",
+            d: "js"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "How to write an IF statement in JavaScript?",
+        answers: {
+            a: "if i = 5",
+            b: "if (i == 5)",
+            c: "if i = 5 then",
+            d: "if i == 5 then"
+        },
+        correctAnswer: "b"
     }
-  ];
+];
 
 // Variable Declaration
 var timeScore = 100;   // Variable to storage the Score
@@ -73,20 +93,20 @@ if (localStorage.getItem("highscores") !== null) {
 }
 
 // This Function display one question and its answers at the time
-function showQuestionAndAnswers (questionNum) {
+function showQuestionAndAnswers(questionNum) {
     // Replace questionEl text for the value of the question property of each question (object)
     questionEl.textContent = myQuestions[questionNum].question;
 
     // Replace each button text for the value of the answer property of each question (object)
     answersEl.children[0].children[0].textContent = "1. " + myQuestions[questionNum].answers.a;
     answersEl.children[0].children[0].setAttribute("data-value", "a");
-  
+
     answersEl.children[1].children[0].textContent = "2. " + myQuestions[questionNum].answers.b;
     answersEl.children[1].children[0].setAttribute("data-value", "b");
-  
+
     answersEl.children[2].children[0].textContent = "3. " + myQuestions[questionNum].answers.c;
     answersEl.children[2].children[0].setAttribute("data-value", "c");
-  
+
     answersEl.children[3].children[0].textContent = "4. " + myQuestions[questionNum].answers.d;
     answersEl.children[3].children[0].setAttribute("data-value", "d");
 
@@ -94,7 +114,7 @@ function showQuestionAndAnswers (questionNum) {
 }
 
 // This function start the countdown for the quiz
-function startQuiz (){
+function startQuiz() {
     // Remove Section tag of the main menu and show the question section
     homeSection.style.display = "none";
     questionSection.style.display = "block";
@@ -115,34 +135,34 @@ function startQuiz (){
         timeScoreLeft.textContent = "Time: " + timeScore;
     }
     // Recall this function intervalCallBack every 1 second
-    quizInterval = setInterval (intervalCallBack, 1000);
+    quizInterval = setInterval(intervalCallBack, 1000);
 }
 
 // This function validate each answer
-function checkAnswer (e) {
+function checkAnswer(e) {
     // if selected answer matched the correctAnswer property of each question
     if (e.target.getAttribute("data-value") === myQuestions[questionCounter].correctAnswer) {
         answerAlert.children[1].textContent = "Correct!"; // Print Correct 
     }
-    else {  
+    else {
         answerAlert.children[1].textContent = "Wrong!";  // Print Correct 
         timeScore -= 25;   // Reduce the time left by 10
         timeScoreLeft.textContent = "Time: " + timeScore;  // Update the time left label 
     }
-    
+
     // If havent reach the last question
     if (questionCounter < (myQuestions.length - 1)) {
         questionCounter += 1;  // Increase the question counter
         showQuestionAndAnswers(questionCounter);  // Show the next question by calling function showQuestionAndAnswers
     }
     else {
-        clearInterval (quizInterval);  // Stop calling the intervalCallBack function
+        clearInterval(quizInterval);  // Stop calling the intervalCallBack function
         checkForScore();  // Call checkForScore function
     }
 }
 
 // This function adjust score below zero and display result session
-function checkForScore () {
+function checkForScore() {
     if (timeScore < 0) {    // if timeScoe is below Zero
         timeScore = 0;      // Reset timeScore to 0
         timeScoreLeft.textContent = "Time: " + timeScore;  // Update the time left label 
@@ -154,11 +174,11 @@ function checkForScore () {
 }
 
 // This function save the score on the localStorage
-function saveScore () {
+function saveScore() {
     if (initials.value !== "") {    // if student enter initials
         var student = {     // Create a variable to storage the student initials and score
-            "initials" : initials.value,    // student initials
-            "score" : timeScore     // student score
+            "initials": initials.value,    // student initials
+            "score": timeScore     // student score
         };
         highscores.push(student);      // add student object to highscores array
         localStorage.setItem("highscores", JSON.stringify(highscores));  // save highscores array as string on localStorage
@@ -167,7 +187,7 @@ function saveScore () {
 }
 
 // This function will display the highscores section and loop through highscores array 
-function showHighscores () {
+function showHighscores() {
     header.style.display = "none";  // Hide header section
     mainArticle.style.display = "none";     // Hide main section
     scoreArticle.style.display = "block";   // Show the score section
@@ -176,18 +196,18 @@ function showHighscores () {
     for (var counter = 0; counter < highscores.length; counter++) {
         var listItem = document.createElement("li");    // Create a li tag element
         // Assigned the initials and score as li text content
-        listItem.textContent = (counter + 1 ) + ". " + highscores[counter].initials + " - " + highscores[counter].score;
+        listItem.textContent = (counter + 1) + ". " + highscores[counter].initials + " - " + highscores[counter].score;
         scoresList.appendChild(listItem);   // Append the new li to the ol list
     }
 }
 
 // This function will reload page back to main page
-function showMainArticle () {
+function showMainArticle() {
     location.reload();  // Reload page
 }
 
 // This function will remove highscores in the local storage and reload the page
-function eraseAllScores () {
+function eraseAllScores() {
     localStorage.removeItem("highscores");  // Remove local storage with key (highscores)
     location.reload();  // Reload page
 }

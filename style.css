@@ -1,14 +1,16 @@
-
+/* Center all section on the center of the screen */
 #main-wrapper, #question-section, #result-section, #answer-alert, #scores-wrapper {
     margin-left: auto;
     margin-right: auto;
     width: 70%;
 }
 
+/* Makes all h2 tags bolder*/
 h2 {
     font-weight: bolder;
 }
 
+/* Style the View highscores button */
 #view-highscores {
     display: flex;
     justify-content: flex-start;
@@ -20,7 +22,7 @@ h2 {
     border-radius: 10px;
 }
 
-
+/* Style timer label */
 #timer {
     display: flex;
     justify-content: flex-end;
@@ -29,11 +31,12 @@ h2 {
     margin: 20px;
 }
 
+/* Center the text on the home section */
 #home-section {
     text-align: center;
 }
 
-
+/* Style all remaining buttons */
 #start-button, .answer-button1, 
 .answer-button2, .answer-button3, 
 .answer-button4,  #submit-button, 
@@ -44,7 +47,7 @@ h2 {
     margin: 5px;
 }
 
-
+/* Style each list item on the Highscores section */
 #highscores-list li {
     background-color: #a67dc8;
     padding: 5px;
