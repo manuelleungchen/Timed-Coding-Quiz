@@ -3,8 +3,6 @@ Timed Coding Quiz to practice JavaScript knowledge
 
 ![Languages](https://img.shields.io/github/languages/top/manuelleungchen/Timed-Coding-Quiz) ![Code Size](https://img.shields.io/github/languages/code-size/manuelleungchen/Timed-Coding-Quiz) ![Repo Size](https://img.shields.io/github/repo-size/manuelleungchen/Timed-Coding-Quiz) ![License](https://img.shields.io/github/license/manuelleungchen/Timed-Coding-Quiz)
 
-# Password Generator
-
 ## Description
 This repository **\([Timed Coding Quiz](https://github.com/manuelleungchen/Timed-Coding-Quiz)\)** contains a Web Application that generates a time base quiz with Java Script questions. The languages use on this website are **HTML 5**, **CSS**, **Bootstrap** and **JavaScript**. This source code is available to everyone under the standard [MIT license](https://github.com/manuelleungchen/Timed-Coding-Quiz/blob/main/LICENSE).
 
